@@ -21,6 +21,7 @@ if (-not(Test-Path -Path $UndoDir)) {
 }
 
 Write-Host 'Installing...'
+
 if (Test-Path -Path $HOME/*vimrc) {
     Remove-Item $HOME/*vimrc
 }
