@@ -11,9 +11,9 @@ Plug 'tpope/vim-repeat'
 Plug 'sheerun/vim-polyglot'
 
 " colorschemes
-Plug '/morhetz/gruvbox'
-Plug '/tomasr/molokai'
-Plug '/mhartington/oceanic-next'
+Plug 'morhetz/gruvbox'
+Plug 'tomasr/molokai'
+Plug 'mhartington/oceanic-next'
 
 call plug#end()
 
@@ -84,20 +84,20 @@ set belloff=all
 "set novisualbell
 
 
-" colors
-set t_Co=256
-set t_ut=
-if (has("termguicolors"))
-  set termguicolors
-endif
-
 "colorschemes
-set bg=dark
 colorscheme OceanicNext
 " colorscheme gruvbox
 " let g:molokai_original = 0
 " let g:rehash256 = 1
 " colorscheme molokai
+
+" colors
+set background=dark
+set t_Co=256
+set t_ut=
+if (has("termguicolors"))
+  set termguicolors
+endif
 
 set autoread
 set backspace=indent,eol,start
