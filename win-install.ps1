@@ -19,6 +19,7 @@ else {
 if (-not(Test-Path -Path $UndoDir)) {
     New-Item -ItemType 'directory' -Path $UndoDir | Out-Null
 }
+
 Write-Host 'Installing...'
 if (Test-Path -Path $HOME/*vimrc) {
     Remove-Item $HOME/*vimrc
