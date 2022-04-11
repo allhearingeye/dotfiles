@@ -28,4 +28,4 @@ if (Test-Path -Path $HOME/*vimrc) {
 
 New-Item -Path $HOME/.vimrc -ItemType HardLink -Value .vimrc | Out-Null
 vim +'PlugInstall --sync' +qa
-Write-Host 'Complete!'
+Write-Host 'Installation complete!'
