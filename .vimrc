@@ -85,11 +85,14 @@ set belloff=all
 
 
 "colorschemes
-colorscheme OceanicNext
-" colorscheme gruvbox
-" let g:molokai_original = 0
-" let g:rehash256 = 1
-" colorscheme molokai
+try
+    colorscheme OceanicNext
+    " colorscheme gruvbox
+    " let g:molokai_original = 0
+    " let g:rehash256 = 1
+    " colorscheme molokai
+catch
+endtry
 
 " colors
 set background=dark
@@ -126,7 +129,7 @@ nnoremap <C-H> <C-W><C-H>
 " statusline
 set laststatus=2
 
-" Status line
+" file size
     function! FileSize()
         let bytes = getfsize(expand("%:p"))
         if bytes <= 0
