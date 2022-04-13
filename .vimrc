@@ -105,16 +105,24 @@ endif
 set autoread
 set backspace=indent,eol,start
 
-" copy and cut
-vmap <C-c> "+y
-vmap <C-x> "*x
+" copy in system clipboard with clip.exe / xclip
+if system('uname -r') =~ "Microsoft"
+    let s:clip = '/mnt/c/windows/system32/clip.exe'
+elseif has('win32')
+    let s:clip = 'C:\Windows\System32\clip.exe'
+elseif has('unix')
+    let s:clip = 'xclip'
+endif
 
-" if system('uname -r') =~ "Microsoft"
-"     augroup Yank
-"         autocmd!
-"         autocmd TextYankPost * :call system('/mnt/c/windows/system32/clip.exe ',@")
-"         augroup END
-" endif
+if executable(s:clip)
+    augroup Yank
+        autocmd!
+        autocmd TextYankPost *
+\   if v:event.operator ==# 'y' |
+\       call system(s:clip, @") |
+\   endif
+    augroup END
+endif
 
 " Split
 set splitbelow
