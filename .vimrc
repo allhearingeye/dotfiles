@@ -29,7 +29,7 @@ set mouse=a
 set number
 set scrolloff=7
 " set colorcolumn=80
-set pastetoggle=<F3>
+set pastetoggle=<F2>
 set hidden
 
 " search
@@ -70,11 +70,26 @@ set list
 let python_highlight_all=1
 
 " russian keymap
-set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
-" set keymap=russian-jcukenwin
-" set iminsert=0
-" set imsearch=0
+" set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
+set keymap=russian-jcukenwin
+set iminsert=0
+set imsearch=0
+highlight lCursor guifg=NONE guibg=Cyan
 " inoremap <C-l> <C-^>
+
+set spelllang=ru_yo,en_us
+
+" Toggle spellchecking
+function! ToggleSpellCheck()
+  set spell!
+  if &spell
+    echo "Spellcheck ON"
+  else
+    echo "Spellcheck OFF"
+  endif
+endfunction
+
+nnoremap <silent> <Leader>s :call ToggleSpellCheck()<CR>
 
 nmap <silent><leader><leader> :NERDTreeToggle<CR>
 
