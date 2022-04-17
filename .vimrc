@@ -75,7 +75,7 @@ set keymap=russian-jcukenwin
 set iminsert=0
 set imsearch=0
 highlight lCursor guifg=NONE guibg=Cyan
-" inoremap <C-l> <C-^>
+inoremap <C-l> <C-^>
 
 set spelllang=ru_yo,en_us
 
@@ -128,6 +128,12 @@ noremap X "_x
 " Split
 set splitbelow
 set splitright
+
+" json
+if executable("jq")
+    nnoremap <silent><leader>j :% !jq<CR>
+    nnoremap <silent><leader>J :% !jq -c<CR>
+endif
 
 " split navigations
 nnoremap <C-J> <C-W><C-J>
