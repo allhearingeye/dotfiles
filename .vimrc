@@ -120,7 +120,7 @@ endif
 set autoread
 set backspace=indent,eol,start
 
-" copy and cut
+" copy and paste in system clipboard
 set clipboard=unnamed,unnamed
 
 " Split
