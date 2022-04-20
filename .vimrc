@@ -122,8 +122,6 @@ set backspace=indent,eol,start
 
 " copy and cut
 set clipboard=unnamed,unnamed
-noremap x "_x
-noremap X "_x
 
 " Split
 set splitbelow
@@ -140,6 +138,18 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+if has("gui_running")
+  if has("gui_gtk2")
+    set guifont=Inconsolata\ 12
+  elseif has("gui_macvim")
+    set guifont=Menlo\ Regular:h14
+  elseif has("gui_win32")
+    set guifont=Consolas:h11:cANSI
+    set guioptions -=m "Hides the menubar
+    set guioptions -=T "Hides the toolbar
+  endif
+endif
 
 " statusline
 set laststatus=2
