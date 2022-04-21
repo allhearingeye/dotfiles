@@ -80,16 +80,7 @@ inoremap <C-l> <C-^>
 set spelllang=ru_yo,en_us
 
 " Toggle spellchecking
-function! ToggleSpellCheck()
-  set spell!
-  if &spell
-    echo "Spellcheck ON"
-  else
-    echo "Spellcheck OFF"
-  endif
-endfunction
-
-nnoremap <silent> <Leader>s :call ToggleSpellCheck()<CR>
+nnoremap <silent><leader>s :setlocal invspell<CR>
 
 nmap <silent><leader><leader> :NERDTreeToggle<CR>
 
