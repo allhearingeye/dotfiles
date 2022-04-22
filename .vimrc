@@ -14,6 +14,10 @@ Plug 'sheerun/vim-polyglot'
 Plug 'morhetz/gruvbox'
 Plug 'tomasr/molokai'
 Plug 'mhartington/oceanic-next'
+Plug 'w0ng/vim-hybrid'
+Plug 'joshdick/onedark.vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'chriskempson/base16-vim'
 
 call plug#end()
 
@@ -92,11 +96,17 @@ set belloff=all
 
 "colorschemes
 try
-    colorscheme OceanicNext
+    " colorscheme OceanicNext
     " colorscheme gruvbox
+
     " let g:molokai_original = 0
     " let g:rehash256 = 1
     " colorscheme molokai
+
+    colorscheme hybrid
+    " colorscheme onedark
+    " colorscheme solarized
+    " colorscheme base16-default-dark
 catch
 endtry
 
@@ -139,6 +149,8 @@ if has("gui_running")
     set guifont=Consolas:h11:cANSI
     set guioptions -=m "Hides the menubar
     set guioptions -=T "Hides the toolbar
+    set guioptions -=r "Hides right-hand scroll bar
+    set guioptions -=L "Hides left-hand scroll bar
   endif
 endif
 
@@ -152,8 +164,8 @@ endif
 "   Ps = 4  -> steady underline.
 "   Ps = 5  -> blinking bar (xterm).
 "   Ps = 6  -> steady bar (xterm).
-let &t_SI = "\e[6 q"
-let &t_EI = "\e[2 q"
+" let &t_SI = "\e[6 q"
+" let &t_EI = "\e[2 q"
 
 " statusline
 set laststatus=2
@@ -184,8 +196,8 @@ set statusline+=\ %r
 set statusline+=\ %{&paste?'[paste]':''}
 " Left/right separator
 set statusline+=%=
-" Column number:line number
-set statusline+=\ %3c:%-4l
+" Line number:column number
+set statusline+=\ %4l:%-3c
 " Percentage
 set statusline+=\ %3p%%
 " Separator
