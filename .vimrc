@@ -35,6 +35,7 @@ set scrolloff=7
 " set colorcolumn=80
 set pastetoggle=<F2>
 set hidden
+set linebreak
 
 " search
 set ignorecase
@@ -146,7 +147,7 @@ if has("gui_running")
   elseif has("gui_macvim")
     set guifont=Menlo\ Regular:h14
   elseif has("gui_win32")
-    set guifont=Consolas:h11:cANSI
+    set guifont=Consolas:h12:cANSI
     set guioptions -=m "Hides the menubar
     set guioptions -=T "Hides the toolbar
     set guioptions -=r "Hides right-hand scroll bar
