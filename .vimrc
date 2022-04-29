@@ -123,7 +123,7 @@ set autoread
 set backspace=indent,eol,start
 
 " copy and paste in system clipboard
-set clipboard=unnamed,unnamed
+set clipboard=unnamed,unnamedplus
 
 " Split
 set splitbelow
