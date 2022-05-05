@@ -51,7 +51,7 @@ filetype plugin on
 filetype plugin indent on
 syntax on
 
-let mapleader = ","
+" let mapleader = ","
 
 " undo dir
 if has('win32')
