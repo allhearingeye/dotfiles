@@ -1,0 +1,37 @@
+[global_config]
+  window_state = maximise
+  title_transmit_bg_color = "#2777ff"
+  title_receive_bg_color = "#d41919"
+  title_inactive_fg_color = "#ffffff"
+  title_inactive_bg_color = "#23252e"
+[keybindings]
+  new_tab = <Primary>t
+  go_up = <Alt>k
+  go_down = <Alt>j
+  go_left = <Alt>h
+  go_right = <Alt>l
+  split_horiz = <Primary><Alt>o
+  split_vert = <Primary><Alt>e
+  page_up_half = <Primary><Shift>u
+  page_down_half = <Primary><Shift>d
+  line_up = <Primary><Shift>k
+  line_down = <Primary><Shift>j
+  next_tab = <Primary><Shift>l
+  prev_tab = <Primary><Shift>h
+  layout_launcher = <Primary>asciitilde
+[profiles]
+  [[default]]
+    background_darkness = 0.95
+    cursor_color = "#aaaaaa"
+    scrollback_infinite = True
+    palette = "#1f2229:#d41919:#5ebdab:#fea44c:#367bf0:#9755b3:#49aee6:#e6e6e6:#198388:#ec0101:#47d4b9:#ff8a18:#277fff:#962ac3:#05a1f7:#ffffff"
+    use_theme_colors = True
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]

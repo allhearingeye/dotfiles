@@ -2,6 +2,7 @@
 
 vimplug=$HOME/.vim/autoload/plug.vim
 undodir=$HOME/.vim/undodir
+terminator_dir=$HOME/.config/terminator
 
 if [[ -f "$vimplug" ]]; then
     echo "Vim-plug exists"
@@ -51,4 +52,8 @@ if [[ -n $TMUX ]]; then
       *  ) echo -e  "\n\nDon't forget to restart tmux manually";;
     esac
 fi
+
+[[ -f $terminator_dir/config ]] && rm $terminator_dir/config
+[[ -d $terminator_dir ]] || mkdir -p $terminator_dir
+ln -s $PWD/terminator/config $terminator_dir/config
 
