@@ -18,6 +18,7 @@ Plug 'w0ng/vim-hybrid'
 Plug 'joshdick/onedark.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'chriskempson/base16-vim'
+Plug 'sainnhe/sonokai'
 
 call plug#end()
 
@@ -104,7 +105,11 @@ try
     " let g:rehash256 = 1
     " colorscheme molokai
 
-    colorscheme hybrid
+    " let g:sonokai_style = 'default'
+    " let g:sonokai_better_performance = 1
+    " colorscheme sonokai
+
+    " colorscheme hybrid
     " colorscheme onedark
     " colorscheme solarized
     " colorscheme base16-default-dark
@@ -112,12 +117,12 @@ catch
 endtry
 
 " colors
-set background=dark
-set t_Co=256
-set t_ut=
-if (has("termguicolors"))
-  set termguicolors
-endif
+" set background=dark
+" set t_Co=256
+" set t_ut=
+" if (has("termguicolors"))
+"   set termguicolors
+" endif
 
 set autoread
 set backspace=indent,eol,start
@@ -152,6 +157,7 @@ if has("gui_running")
     set guioptions -=T "Hides the toolbar
     set guioptions -=r "Hides right-hand scroll bar
     set guioptions -=L "Hides left-hand scroll bar
+    set lines=50 columns=95
   endif
 endif
 
