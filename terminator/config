@@ -10,8 +10,8 @@
   go_down = <Alt>j
   go_left = <Alt>h
   go_right = <Alt>l
-  split_horiz = <Primary><Alt>o
-  split_vert = <Primary><Alt>e
+  split_horiz = <Primary><Shift>o
+  split_vert = <Primary><Shift>e
   page_up_half = <Primary><Shift>u
   page_down_half = <Primary><Shift>d
   line_up = <Primary><Shift>k
