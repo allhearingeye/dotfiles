@@ -120,9 +120,9 @@ endtry
 set background=dark
 set t_Co=256
 set t_ut=
-if (has("termguicolors"))
-  set termguicolors
-endif
+" if (has("termguicolors"))
+"   set termguicolors
+" endif
 
 set autoread
 set backspace=indent,eol,start
