@@ -117,12 +117,12 @@ catch
 endtry
 
 " colors
-" set background=dark
-" set t_Co=256
-" set t_ut=
-" if (has("termguicolors"))
-"   set termguicolors
-" endif
+set background=dark
+set t_Co=256
+set t_ut=
+if (has("termguicolors"))
+  set termguicolors
+endif
 
 set autoread
 set backspace=indent,eol,start
@@ -147,17 +147,22 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 if has("gui_running")
+  set guioptions -=m "Hides the menubar
+  set guioptions -=T "Hides the toolbar
+  set guioptions -=r "Hides right-hand scroll bar
+  set guioptions -=L "Hides left-hand scroll bar
+  set lines=50 columns=95
+
+  let g:sonokai_style = 'default'
+  let g:sonokai_better_performance = 1
+  colorscheme sonokai
+
   if has("gui_gtk2")
     set guifont=Inconsolata\ 12
   elseif has("gui_macvim")
     set guifont=Menlo\ Regular:h14
   elseif has("gui_win32")
     set guifont=Consolas:h12:cANSI
-    set guioptions -=m "Hides the menubar
-    set guioptions -=T "Hides the toolbar
-    set guioptions -=r "Hides right-hand scroll bar
-    set guioptions -=L "Hides left-hand scroll bar
-    set lines=50 columns=95
   endif
 endif
 
