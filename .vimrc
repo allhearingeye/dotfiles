@@ -9,6 +9,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'sheerun/vim-polyglot'
+Plug 'lyokha/vim-xkbswitch'
 
 " colorschemes
 Plug 'morhetz/gruvbox'
@@ -77,11 +78,12 @@ let python_highlight_all=1
 
 " russian keymap
 " set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
-set keymap=russian-jcukenwin
-set iminsert=0
-set imsearch=0
-highlight lCursor guifg=NONE guibg=Cyan
-inoremap <C-l> <C-^>
+" set keymap=russian-jcukenwin
+" set iminsert=0
+" set imsearch=0
+" highlight lCursor guifg=NONE guibg=Cyan
+" inoremap <C-l> <C-^>
+let g:XkbSwitchEnabled = 1
 
 set spelllang=ru_yo,en_us
 
@@ -105,9 +107,9 @@ try
     " let g:rehash256 = 1
     " colorscheme molokai
 
-    " let g:sonokai_style = 'default'
-    " let g:sonokai_better_performance = 1
-    " colorscheme sonokai
+    let g:sonokai_style = 'default'
+    let g:sonokai_better_performance = 1
+    colorscheme sonokai
 
     " colorscheme hybrid
     " colorscheme onedark
@@ -120,9 +122,9 @@ endtry
 set background=dark
 set t_Co=256
 set t_ut=
-" if (has("termguicolors"))
-"   set termguicolors
-" endif
+if (has("termguicolors"))
+  set termguicolors
+endif
 
 set autoread
 set backspace=indent,eol,start
@@ -145,6 +147,9 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+nnoremap j gj
+nnoremap k gk
 
 if has("gui_running")
   set guioptions -=m "Hides the menubar

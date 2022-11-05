@@ -2,7 +2,6 @@
 
 vimplug=$HOME/.vim/autoload/plug.vim
 undodir=$HOME/.vim/undodir
-terminator_dir=$HOME/.config/terminator
 
 if [[ -f "$vimplug" ]]; then
     echo "Vim-plug exists"
@@ -38,11 +37,9 @@ fi
 
 [[ -d $undodir ]] || mkdir -p $undodir
 echo "Installing..."
-[[ -f "$HOME/.vimrc" ]] && rm $HOME/.vimrc
-ln -s $PWD/.vimrc $HOME/.vimrc
-vim +"PlugInstall --sync" +qa
-[[ -f "$HOME/.tmux.conf" ]] && rm $HOME/.tmux.conf
-ln -s $PWD/.tmux.conf $HOME/.tmux.conf
+cp .vimrc $HOME/.vimrc
+
+cp .tmux.conf $HOME/.tmux.conf
 
 if [[ -n $TMUX ]]; then
     tmux source-file $HOME/.tmux.conf
@@ -53,7 +50,5 @@ if [[ -n $TMUX ]]; then
     esac
 fi
 
-[[ -f $terminator_dir/config ]] && rm $terminator_dir/config
-[[ -d $terminator_dir ]] || mkdir -p $terminator_dir
-ln -s $PWD/terminator/config $terminator_dir/config
+cp -R $PWD/.config $HOME/
 
