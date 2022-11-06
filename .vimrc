@@ -81,7 +81,7 @@ set iminsert=0
 set imsearch=0
 highlight lCursor guifg=NONE guibg=Cyan
 inoremap <C-l> <C-^>
-let g:XkbSwitchEnabled = 1
+" let g:XkbSwitchEnabled = 1
 
 set spelllang=ru_yo,en_us
 

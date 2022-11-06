@@ -14,7 +14,6 @@ fi
 [[ -d $undodir ]] || mkdir -p $undodir
 echo "Installing..."
 cp .vimrc $HOME/.vimrc
-echo -e "For xkbswitch run: \nsudo cp ./utils/libxkbswitch.so /usr/local/lib/libxkbswitch.so"
 vim +"PlugInstall --sync" +qa
 
 # tmux install
@@ -31,4 +30,7 @@ fi
 
 # Other config install
 cp -R $PWD/.config $HOME/
+
+echo "Installation complete!"
+echo -e "For xkbswitch uncomment line 'let g:XkbSwitchEnabled = 1' in ~/.vimrc and run: \nsudo cp ./utils/libxkbswitch.so /usr/local/lib/libxkbswitch.so"
 
