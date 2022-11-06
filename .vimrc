@@ -76,11 +76,11 @@ let python_highlight_all=1
 
 " russian keymap
 " set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
-" set keymap=russian-jcukenwin
-" set iminsert=0
-" set imsearch=0
-" highlight lCursor guifg=NONE guibg=Cyan
-" inoremap <C-l> <C-^>
+set keymap=russian-jcukenwin
+set iminsert=0
+set imsearch=0
+highlight lCursor guifg=NONE guibg=Cyan
+inoremap <C-l> <C-^>
 let g:XkbSwitchEnabled = 1
 
 set spelllang=ru_yo,en_us
