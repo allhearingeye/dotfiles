@@ -44,8 +44,6 @@ set ignorecase
 set smartcase
 set incsearch
 set hlsearch
-nnoremap <silent><C-_> :nohlsearch<CR>
-nnoremap <silent><C-/> :nohlsearch<CR>
 
 
 filetype on
