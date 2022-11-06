@@ -148,6 +148,8 @@ nnoremap <C-H> <C-W><C-H>
 
 nnoremap j gj
 nnoremap k gk
+nnoremap gj j
+nnoremap gk k
 
 if has("gui_running")
   set guioptions -=m "Hides the menubar
