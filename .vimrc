@@ -140,6 +140,11 @@ if executable("jq")
     nnoremap <silent><leader>J :% !jq -c<CR>
 endif
 
+" xml
+if executable("xml")
+    nnoremap <silent><leader>x :% !xml fo<CR>
+endif
+
 " split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
