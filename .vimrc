@@ -13,12 +13,6 @@ Plug 'lyokha/vim-xkbswitch'
 
 " colorschemes
 Plug 'morhetz/gruvbox'
-Plug 'tomasr/molokai'
-Plug 'mhartington/oceanic-next'
-Plug 'w0ng/vim-hybrid'
-Plug 'joshdick/onedark.vim'
-Plug 'altercation/vim-colors-solarized'
-Plug 'chriskempson/base16-vim'
 Plug 'sainnhe/sonokai'
 
 call plug#end()
@@ -51,7 +45,6 @@ filetype plugin on
 filetype plugin indent on
 syntax on
 
-" let mapleader = ","
 
 " undo dir
 if has('win32')
@@ -79,7 +72,6 @@ let python_highlight_all=1
 set keymap=russian-jcukenwin
 set iminsert=0
 set imsearch=0
-highlight lCursor guifg=NONE guibg=Cyan
 inoremap <C-l> <C-^>
 let g:XkbSwitchEnabled = 1
 
@@ -98,21 +90,14 @@ set belloff=all
 
 "colorschemes
 try
-    " colorscheme OceanicNext
+    " let g:gruvbox_transparent_bg = '1'
     " colorscheme gruvbox
-
-    " let g:molokai_original = 0
-    " let g:rehash256 = 1
-    " colorscheme molokai
 
     let g:sonokai_style = 'default'
     let g:sonokai_better_performance = 1
+    let g:sonokai_disable_italic_comment = 1
+    let g:sonokai_transparent_background = 1
     colorscheme sonokai
-
-    " colorscheme hybrid
-    " colorscheme onedark
-    " colorscheme solarized
-    " colorscheme base16-default-dark
 catch
 endtry
 
@@ -123,6 +108,11 @@ set t_ut=
 if (has("termguicolors"))
   set termguicolors
 endif
+
+highlight Normal ctermbg=NONE guibg=NONE
+highlight LineNr ctermbg=NONE guibg=NONE
+highlight SignColumn ctermbg=NONE guibg=NONE
+highlight StatusLine ctermbg=NONE guibg=NONE
 
 set autoread
 set backspace=indent,eol,start
@@ -165,14 +155,19 @@ if has("gui_running")
 
   let g:sonokai_style = 'default'
   let g:sonokai_better_performance = 1
+  let g:sonokai_disable_italic_comment = 0
+  let g:sonokai_transparent_background = 0
   colorscheme sonokai
 
-  if has("gui_gtk2")
+  highlight lCursor guifg=NONE guibg=Cyan
+
+
+  if has("gui_gtk3")
     set guifont=Inconsolata\ 12
   elseif has("gui_macvim")
     set guifont=Menlo\ Regular:h14
   elseif has("gui_win32")
-    set guifont=Consolas:h12:cANSI
+    set guifont=Hack_NFM:h12:cANSI
   endif
 endif
 
