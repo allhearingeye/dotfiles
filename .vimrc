@@ -113,6 +113,7 @@ highlight Normal ctermbg=NONE guibg=NONE
 highlight LineNr ctermbg=NONE guibg=NONE
 highlight SignColumn ctermbg=NONE guibg=NONE
 highlight StatusLine ctermbg=NONE guibg=NONE
+highlight StatusLineNC ctermbg=NONE guibg=NONE
 
 set autoread
 set backspace=indent,eol,start
