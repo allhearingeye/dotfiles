@@ -9,7 +9,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'sheerun/vim-polyglot'
-Plug 'lyokha/vim-xkbswitch'
+" Plug 'lyokha/vim-xkbswitch'
 
 " colorschemes
 Plug 'morhetz/gruvbox'
@@ -73,7 +73,8 @@ set keymap=russian-jcukenwin
 set iminsert=0
 set imsearch=0
 inoremap <C-l> <C-^>
-let g:XkbSwitchEnabled = 1
+cnoremap <C-l> <C-^>
+" let g:XkbSwitchEnabled = 1
 
 set spelllang=ru_yo,en_us
 
