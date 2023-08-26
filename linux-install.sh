@@ -32,5 +32,4 @@ fi
 cp -R $PWD/.config $HOME/
 
 echo "Installation complete!"
-echo -e "For xkbswitch run: \nsudo cp ./utils/libxkbswitch.so /usr/local/lib/libxkbswitch.so"
 

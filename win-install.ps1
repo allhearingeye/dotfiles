@@ -27,7 +27,7 @@ if (-not(Test-Path -Path $UndoDir))
 Write-Host 'Installing...'
 
 Copy-Item -Force .vimrc $HOME/.vimrc
-Copy-Item -Force ./utils/libxkbswitch*.dll $HOME/scoop/apps/vim/current
+Copy-Item -Force .config/nvim $env:LOCALAPPDATA\nvim
 vim +'PlugInstall --sync' +qa
 Write-Host 'Installation complete!'
 
