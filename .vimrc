@@ -73,10 +73,6 @@ set iminsert=0
 set imsearch=0
 inoremap <C-l> <C-^>
 cnoremap <C-l> <C-^>
-<<<<<<< HEAD
-" let g:XkbSwitchEnabled = 1
-=======
->>>>>>> a942891 (update vimrc)
 
 set spelllang=ru,en_us
 
