@@ -14,7 +14,7 @@ fi
 [[ -d $undodir ]] || mkdir -p $undodir
 echo "Installing..."
 cp .vimrc $HOME/.vimrc
-vim +"PlugInstall --sync" +qa
+/usr/bin/vim +"PlugInstall --sync" +qa
 
 # tmux install
 cp .tmux.conf $HOME/.tmux.conf
