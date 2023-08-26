@@ -1,22 +1,21 @@
-set nocompatible
-
-
 call plug#begin()
 
-Plug 'preservim/nerdtree'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'sheerun/vim-polyglot'
-" Plug 'lyokha/vim-xkbswitch'
+Plug 'lervag/wiki.vim'
+Plug 'dhruvasagar/vim-table-mode'
+Plug 'junegunn/fzf'
+" , { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " colorschemes
 Plug 'morhetz/gruvbox'
 Plug 'sainnhe/sonokai'
 
 call plug#end()
-
 
 set encoding=utf-8
 set fileencoding=utf-8
@@ -32,6 +31,7 @@ set scrolloff=7
 set pastetoggle=<F2>
 set hidden
 set linebreak
+let mapleader = " "
 
 " search
 set ignorecase
@@ -68,20 +68,21 @@ set list
 let python_highlight_all=1
 
 " russian keymap
-" set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 set keymap=russian-jcukenwin
 set iminsert=0
 set imsearch=0
 inoremap <C-l> <C-^>
 cnoremap <C-l> <C-^>
+<<<<<<< HEAD
 " let g:XkbSwitchEnabled = 1
+=======
+>>>>>>> a942891 (update vimrc)
 
-set spelllang=ru_yo,en_us
+set spelllang=ru,en_us
 
 " Toggle spellchecking
 nnoremap <silent><leader>s :setlocal invspell<CR>
 
-nmap <silent><leader><leader> :NERDTreeToggle<CR>
 
 " disable bell
 set belloff=all
@@ -92,6 +93,7 @@ set belloff=all
 "colorschemes
 try
     " let g:gruvbox_transparent_bg = '1'
+    " let g:gruvbox_contrast_darkd = 'hard'
     " colorscheme gruvbox
 
     let g:sonokai_style = 'default'
@@ -110,6 +112,7 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
+
 highlight Normal ctermbg=NONE guibg=NONE
 highlight LineNr ctermbg=NONE guibg=NONE
 highlight SignColumn ctermbg=NONE guibg=NONE
@@ -126,27 +129,12 @@ set clipboard=unnamed,unnamedplus
 set splitbelow
 set splitright
 
-" json
-if executable("jq")
-    nnoremap <silent><leader>j :% !jq<CR>
-    nnoremap <silent><leader>J :% !jq -c<CR>
-endif
-
-" xml
-if executable("xml")
-    nnoremap <silent><leader>x :% !xml fo<CR>
-endif
 
 " split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
-nnoremap j gj
-nnoremap k gk
-nnoremap gj j
-nnoremap gk k
 
 if has("gui_running")
   set guioptions -=m "Hides the menubar
@@ -169,64 +157,20 @@ if has("gui_running")
   elseif has("gui_macvim")
     set guifont=Menlo\ Regular:h14
   elseif has("gui_win32")
-    set guifont=Hack_NFM:h12:cANSI
+    set guifont=Hack\ Nerd\ Font\ Mono:h12:cANSI
   endif
 endif
 
-" Use a line cursor within insert mode and a block cursor everywhere else.
-"
-" Reference chart of values:
-"   Ps = 0  -> blinking block.
-"   Ps = 1  -> blinking block (default).
-"   Ps = 2  -> steady block.
-"   Ps = 3  -> blinking underline.
-"   Ps = 4  -> steady underline.
-"   Ps = 5  -> blinking bar (xterm).
-"   Ps = 6  -> steady bar (xterm).
-" let &t_SI = "\e[6 q"
-" let &t_EI = "\e[2 q"
 
 " statusline
 set laststatus=2
 
-" file size
-    function! FileSize()
-        let bytes = getfsize(expand("%:p"))
-        if bytes <= 0
-            return ""
-        endif
-        if bytes < 1024
-            return bytes . "B"
-        else
-            return (bytes / 1024) . "K"
-        endif
-    endfunction
+let g:wiki_root = '~/notes'
 
-
-" Buffer number
-set statusline=[%n]
-" File name
-set statusline+=\ %t
-" Modified flag
-set statusline+=\ %m
-" Read Only flag
-set statusline+=\ %r
-" Paste mode flag
-set statusline+=\ %{&paste?'[paste]':''}
-" Left/right separator
-set statusline+=%=
-" Line number:column number
-set statusline+=\ %4l:%-3c
-" Percentage
-set statusline+=\ %3p%%
-" Separator
-set statusline+=\ \|\ 
-" File size
-set statusline+=%{FileSize()}
-" Filetype
-set statusline+=\ %y
-" File encoding
-set statusline+=\ %{&fileencoding}
-" File format
-set statusline+=\ [%{&ff}]
+" FZF maps
+nnoremap <silent><leader>ff :Files<CR>
+nnoremap <silent><leader>fg :Rg<CR>
+nnoremap <silent><leader>fb :Buffers<CR>
+nnoremap <silent><leader>fn :cd ~/notes <bar> Files<CR>
+let $FZF_DEFAULT_OPTS="--bind ctrl-u:preview-up,ctrl-d:preview-down"
 
