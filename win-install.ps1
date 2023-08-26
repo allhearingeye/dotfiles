@@ -27,7 +27,7 @@ if (-not(Test-Path -Path $UndoDir))
 Write-Host 'Installing...'
 
 Copy-Item -Force .vimrc $HOME/.vimrc
-Copy-Item -Force .config/nvim $env:LOCALAPPDATA\nvim
+Copy-Item -Force -Recurse .config/nvim $env:LOCALAPPDATA
 vim +'PlugInstall --sync' +qa
 Write-Host 'Installation complete!'
 
