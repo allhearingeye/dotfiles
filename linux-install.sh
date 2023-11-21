@@ -28,6 +28,31 @@ if [[ -n $TMUX ]]; then
     esac
 fi
 
+# Set display for WSL
+if [[ $(uname -a | grep [Mm]icrosoft) ]]; then
+    display="export DISPLAY=\"\$(/sbin/ip route | awk '/default/ { print \$3 }'):0\""
+
+    if [[ -n "`$SHELL -c 'echo $ZSH_VERSION;'`" ]]; then
+        shellrc="$HOME/.zshrc"
+    elif [[ -n "`$SHELL -c 'echo $BASH_VERSION'`" ]]; then
+        shellrc="$HOME/.bashrc"
+    else
+        echo ".bashrc and .zshrc not found"
+    fi
+
+    if [[ -n $shellrc ]]; then
+        case `grep -Fx "$display" "$shellrc" >/dev/null; echo $?` in
+            0) ;;
+            1)
+              echo -e "$display" >> $shellrc
+              ;;
+            *)
+              echo "Something went wrong while set DISPLAY"
+            ;;
+        esac
+    fi
+fi
+
 # Other config install
 cp -R $PWD/.config $HOME/
 

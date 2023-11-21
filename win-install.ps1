@@ -1,5 +1,6 @@
 $VimPlug = $HOME + '/vimfiles/autoload/plug.vim'
 $UndoDir = $HOME + '/vimfiles/undodir'
+$XLaunch = $HOME + '/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup/config.xlaunch'
 
 
 if (-not(Test-Path -Path $VimPlug -PathType Leaf))
@@ -26,6 +27,16 @@ if (-not(Test-Path -Path $UndoDir))
 
 Write-Host 'Installing...'
 
+try {
+    if (-not(winget list | grep VcXsrv)) {
+        Write-Host 'Install VcXsrv: winget install marha.VcXsrv'
+    }
+} catch {
+    $_.Exception
+    Write-Host 'Install VcXsrv if not installed'
+}
+
+Copy-Item -Force config.xlaunch $XLaunch
 Copy-Item -Force .vimrc $HOME/.vimrc
 Copy-Item -Force -Recurse .config/nvim $env:LOCALAPPDATA
 vim +'PlugInstall --sync' +qa
