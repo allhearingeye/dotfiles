@@ -3,7 +3,7 @@ vim.opt.undofile = true
 
 -- Отображать номера строк относительно текущей строки
 vim.opt.number = true
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 
 -- Отображать строки сверху и снизу от курсора при скролле
 vim.opt.scrolloff = 7
