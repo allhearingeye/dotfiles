@@ -30,7 +30,11 @@ fi
 
 # Set display for WSL
 if [[ $(uname -a | grep [Mm]icrosoft) ]]; then
-    display="export DISPLAY=\"\$(/sbin/ip route | awk '/default/ { print \$3 }'):0\""
+    # WSL1
+    display="export DISPLAY=:0"
+
+    # WSL2
+    # display="export DISPLAY=\"\$(/sbin/ip route | awk '/default/ { print \$3 }'):0\""
 
     if [[ -n "`$SHELL -c 'echo $ZSH_VERSION;'`" ]]; then
         shellrc="$HOME/.zshrc"
