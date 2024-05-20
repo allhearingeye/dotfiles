@@ -35,7 +35,7 @@ vim.opt.expandtab = true
 
 -- Отображать невидимые символы
 vim.opt.list = true
-vim.opt.listchars = "trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂"
+vim.opt.listchars = "trail:·,nbsp:␣,tab:→ ,extends:▸,precedes:◂"
 
 -- Языки для проверки правописания (не работает с vim.opt.spelllang)
 vim.opt.spelllang = {"ru", "en_us"}
