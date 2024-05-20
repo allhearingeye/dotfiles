@@ -81,6 +81,8 @@ vim.keymap.set({"i", "c"}, "<C-l>", "<C-^>", {silent = true })
 -- Переключить проверку орфографии
 vim.keymap.set("n", "<leader>s", ":set invspell<CR>", {silent = true })
 
+-- Скопировать путь до файла в регистр:
+vim.keymap.set("n", "<leader>y", ':let @+ = expand("%:p")<CR>', { silent = true })
 
 -- Plugins --
 
