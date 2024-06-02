@@ -37,6 +37,7 @@ try {
 }
 
 Copy-Item -Force config.xlaunch $XLaunch
+Copy-Item -Force .wezterm.lua $HOME/.wezterm.lua
 Copy-Item -Force .vimrc $HOME/.vimrc
 Copy-Item -Force -Recurse .config/nvim $env:LOCALAPPDATA
 vim +'PlugInstall --sync' +qa
