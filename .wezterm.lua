@@ -62,7 +62,7 @@ config.keys = {
   { key = 'X', mods = 'LEADER', action = action.CloseCurrentTab { confirm = true } },
   { key = 'p', mods = 'CTRL', action = action.SendKey { key = 'UpArrow', mods = 'NONE' } },
   { key = 'n', mods = 'CTRL', action = action.SendKey { key = 'DownArrow', mods = 'NONE' } },
-  { key = 'd', mods = 'CTRL', action = action.CloseCurrentPane { confirm = true } },
+  { key = 'd', mods = 'LEADER', action = action.CloseCurrentPane { confirm = true } },
   { key = ',', mods = 'LEADER', action = action.PromptInputLine {
       description = 'Enter new name for tab',
       action = wezterm.action_callback(function(window, pane, line)
