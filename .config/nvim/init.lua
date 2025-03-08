@@ -70,13 +70,14 @@ vim.opt.swapfile = false
 vim.g.mapleader = " "
 
 -- Навигация по сплитам
-vim.keymap.set("n", "<c-k>", ":wincmd k<CR>", { silent = true })
-vim.keymap.set("n", "<c-j>", ":wincmd j<CR>", { silent = true })
-vim.keymap.set("n", "<c-h>", ":wincmd h<CR>", { silent = true })
-vim.keymap.set("n", "<c-l>", ":wincmd l<CR>", { silent = true })
+-- vim.keymap.set("n", "<c-k>", ":wincmd k<CR>", { silent = true })
+-- vim.keymap.set("n", "<c-j>", ":wincmd j<CR>", { silent = true })
+-- vim.keymap.set("n", "<c-h>", ":wincmd h<CR>", { silent = true })
+-- vim.keymap.set("n", "<c-l>", ":wincmd l<CR>", { silent = true })
 
 -- Смена раскладки
 vim.keymap.set({"i", "c"}, "<C-l>", "<C-^>", {silent = true })
+vim.keymap.set({"n"}, "<C-l>", ":let &iminsert = !&iminsert<CR>", {silent = true })
 
 -- Переключить проверку орфографии
 vim.keymap.set("n", "<leader>s", ":set invspell<CR>", {silent = true })
